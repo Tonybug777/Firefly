@@ -11,10 +11,10 @@ import {
 // ============================================================================
 const getDynamicNavBarConfig = (): NavBarConfig => {
 	// 基础导航栏链接
-	const links: NavBarLink[] = [
-		// 主页
-		LinkPresets.Home,
-	];
+	const links: NavBarLink[] = [];
+
+	// 主页
+	links.push(LinkPresets.Home);
 
 	// 文章及其子菜单
 	links.push({
@@ -33,11 +33,19 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
-	// 友链
-	links.push(LinkPresets.Friends);
+	//社交及其子菜单
+	links.push({
+		name: "社交",
+		url: "#",
+		icon: "material-symbols:group",
+		children: [
+			// 友链
+			LinkPresets.Friends,
 
-	// 留言板
-	links.push(LinkPresets.Guestbook);
+			// 留言
+			LinkPresets.Guestbook,
+		],
+	});
 
 	// 我的及其子菜单
 	links.push({
@@ -45,6 +53,9 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		url: "#",
 		icon: "material-symbols:person",
 		children: [
+			// 动态
+			LinkPresets.Dynamic,
+
 			// 相册
 			LinkPresets.Gallery,
 
@@ -78,28 +89,17 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		// 子菜单
 		children: [
 			{
-				name: "GitHub",
-				url: "https://github.com/CuteLeaf/Firefly",
+				name: "相册",
+				url: " https://pan.baidu.com/s/1yomqpZEARg8sTNNAcwobJQ",
+				external: true,
+				title: "密码是我的英文名",
+				icon: "material-symbols:photo-library",
+			},
+			{
+				name: "Github",
+				url: "https://github.com/Tonybug777/Firefly",
 				external: true,
 				icon: "fa7-brands:github",
-			},
-			{
-				name: "Gitee",
-				url: "https://gitee.com/CuteLeaf/Firefly",
-				external: true,
-				icon: "fa7-brands:gitee",
-			},
-			{
-				name: "QQ交流群",
-				url: "https://qm.qq.com/q/ZGsFa8qX2G",
-				external: true,
-				icon: "fa7-brands:qq",
-			},
-			{
-				name: "Firefly文档",
-				url: "https://docs-firefly.cuteleaf.cn",
-				external: true,
-				icon: "material-symbols:docs",
 			},
 		],
 	});
@@ -130,6 +130,12 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/",
 		icon: "material-symbols:home",
 	},
+	Dynamic: {
+		name: "动态",
+		url: "/dynamic/",
+		icon: "material-symbols:forum-rounded",
+		pageKey: "dynamic",
+	},
 	Archive: {
 		name: "归档",
 		url: "/archive/",
@@ -148,7 +154,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 	Friends: {
 		name: "友链",
 		url: "/friends/",
-		icon: "material-symbols:group",
+		icon: "material-symbols:link-2-rounded",
 		pageKey: "friends",
 	},
 	Sponsor: {
@@ -164,7 +170,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		pageKey: "guestbook",
 	},
 	About: {
-		name: "关于我",
+		name: "关于",
 		url: "/about/",
 		icon: "material-symbols:person",
 	},

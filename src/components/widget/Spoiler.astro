@@ -1,0 +1,64 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+	class?: string;
+	block?: boolean;
+};
+
+const {
+	block = false,
+	as: Tag = block ? "div" : "span",
+	class: className = "",
+} = Astro.props;
+---
+
+<Tag
+  class={
+    `spoiler ${className}`
+  }
+>
+  <slot class="content" />
+</Tag>
+
+<style>
+@import 'tailwindcss';
+:root:not(.dark) .spoiler {
+  --_spoiler-mask: color-mix(in oklch, var(--primary) 55%, white 45%);
+}
+/* .spoiler {
+   --_spoiler-mask: var(--primary);
+  @apply bg-[var(--_spoiler-mask)] px-1 py-0.5 overflow-hidden rounded-md;
+  box-decoration-break: clone;
+  color: transparent;
+  transition: all 0.15s ease-in-out;
+  :global(*) {
+    filter: opacity(0);
+    transition: filter 0.15s ease-in-out;
+  }
+  &:hover,
+  &:focus-within {
+    background-color: transparent;
+    filter: opacity(1);
+    color: inherit;
+    transition: all 0.15s ease-in-out;
+    :global(*) {
+      filter: opacity(1);
+      transition: filter 0.15s ease-in-out;
+    }
+  }
+} */
+/* 另一个实现方式 */
+
+.spoiler {
+  --_spoiler-mask: var(--primary);
+  @apply hover:bg-transparent px-1 py-0.5 overflow-hidden rounded-md transition-all duration-150;
+  background-color: var(--_spoiler-mask);
+  box-decoration-break: clone;
+  &:not(:hover) {
+    color: transparent;
+    :global(*) {
+        opacity: 0;
+    }
+  }
+}
+</style>

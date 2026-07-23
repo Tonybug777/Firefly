@@ -1,0 +1,64 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	class?: string;
+	title: string;
+}
+
+const { class: className, title, ...props } = Astro.props;
+---
+
+<collapse-component class='group/expand'>
+  <div
+    class={`cursor-pointer rounded-xl bg-neutral-100/60 dark:bg-neutral-800/50 px-3 my-4 sm:px-4 group-[.expanded]/expand:bg-muted ${className}`}
+    {...props}
+  >
+    <!-- <slot name='before' /> -->
+    <div
+      class='group/highlight expand-title sticky top-0 z-20 flex cursor-pointer items-center justify-between py-1.5 group-[.expanded]/expand:bg-muted sm:py-2 hover:text-(--primary)'
+    >
+      <p class='m-0 transition-colors '>{title}</p>
+      <div class='expand-button'>
+        <Icon
+          is:inline
+          name='fa7-solid:angle-right'
+          class='w-6 h-6 transition-transform duration-200 text-(--primary) group-[.expanded]/expand:-rotate-90'
+        />
+      </div>
+    </div>
+    <div
+      class='expand-content grid opacity-0 transition-all duration-300 ease-in-out group-[.expanded]/expand:mb-3 group-[.expanded]/expand:opacity-100 sm:group-[.expanded]/expand:mb-4'
+    >
+      <div class='overflow-hidden cursor-auto'>
+        <slot />
+      </div>
+    </div>
+  </div>
+</collapse-component>
+
+<script>
+  class Collapse extends HTMLElement {
+    constructor() {
+      super()
+    }
+
+    connectedCallback() {
+      const expandTitle = this.querySelector('.expand-title')
+      // const expandable = this.querySelector('.expandable')
+      expandTitle?.addEventListener('click', () => {
+        this.classList.toggle('expanded')
+      })
+    }
+  }
+  customElements.define('collapse-component', Collapse)
+</script>
+
+<style>
+  .expand-content {
+    grid-template-rows: 0fr;
+  }
+  .expanded .expand-content {
+    grid-template-rows: 1fr;
+  }
+</style>
