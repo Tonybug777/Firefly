@@ -1,5 +1,5 @@
 {
-	"name": "HQSay",
+	"name": "hqsay-firefly",
 	"compatibility_date": "2026-07-23",
 	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
