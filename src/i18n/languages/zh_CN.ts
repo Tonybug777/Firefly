@@ -37,6 +37,7 @@ export const zh_CN: Translation = {
 	[Key.dynamicBackToList]: "返回动态列表",
 	[Key.dynamicProfile]: "查看 {name} 的资料",
 	[Key.dynamicPermalink]: "此动态的固定链接",
+	[Key.dynamicLocation]: "📍 {location}",
 	[Key.dynamicCollapseGallery]: "收起",
 	[Key.dynamicViewOriginal]: "查看大图",
 	[Key.dynamicPreviousImage]: "上一张图片",

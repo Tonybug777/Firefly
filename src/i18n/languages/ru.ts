@@ -37,6 +37,7 @@ export const ru: Translation = {
 	[Key.dynamicBackToList]: "Назад к публикациям",
 	[Key.dynamicProfile]: "Открыть профиль {name}",
 	[Key.dynamicPermalink]: "Постоянная ссылка на публикацию",
+	[Key.dynamicLocation]: "📍 {location}",
 	[Key.dynamicCollapseGallery]: "Свернуть",
 	[Key.dynamicViewOriginal]: "Открыть оригинал",
 	[Key.dynamicPreviousImage]: "Предыдущее изображение",

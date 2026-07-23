@@ -37,6 +37,7 @@ export const ja: Translation = {
 	[Key.dynamicBackToList]: "投稿一覧へ戻る",
 	[Key.dynamicProfile]: "{name}のプロフィールを見る",
 	[Key.dynamicPermalink]: "この投稿への固定リンク",
+	[Key.dynamicLocation]: "📍 {location}",
 	[Key.dynamicCollapseGallery]: "閉じる",
 	[Key.dynamicViewOriginal]: "拡大表示",
 	[Key.dynamicPreviousImage]: "前の画像",

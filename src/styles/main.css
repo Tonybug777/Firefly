@@ -480,7 +480,7 @@ html {
 
 /*剧透效果*/
 .custom-md spoiler {
-  --_spoiler-mask: var(--primary);
+--_spoiler-mask: var(--primary);
   @apply hover:bg-transparent px-1 py-0.5 overflow-hidden rounded-md transition-all duration-150;
   background-color: var(--_spoiler-mask);
   box-decoration-break: clone;
@@ -531,6 +531,7 @@ html {
   @apply text-xl before:h-4 before:top-[28px] before:left-[-18px] truncate;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

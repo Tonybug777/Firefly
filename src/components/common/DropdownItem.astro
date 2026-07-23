@@ -6,6 +6,7 @@
 interface Props {
 	href?: string;
 	target?: string;
+	title?: string;
 	isActive?: boolean;
 	isLast?: boolean;
 	class?: string;
@@ -15,6 +16,7 @@ interface Props {
 const {
 	href,
 	target,
+	title,
 	isActive = false,
 	isLast = false,
 	class: className,
@@ -34,6 +36,7 @@ const Tag = href ? "a" : "button";
 <Tag 
 	href={href}
 	target={target}
+	title={title}
 	class={allClasses}
 	onclick={onclick}
 >

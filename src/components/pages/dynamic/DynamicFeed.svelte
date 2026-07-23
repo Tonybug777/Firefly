@@ -18,6 +18,7 @@ type DynamicData = {
 	html: string;
 	images: DynamicImage[];
 	searchText: string;
+	location?: string;
 	pinned?: boolean;
 };
 
@@ -180,6 +181,22 @@ function createItem(entry: DynamicData) {
 				},
 			).format(date);
 			time.textContent += ` ${formatTimezoneOffset(timezone, date)}`;
+		}
+	}
+
+	const locationElement = root.querySelector<HTMLElement>(
+		"[data-dynamic-location]",
+	);
+	if (locationElement) {
+		if (entry.location) {
+			const locationTextElement = locationElement.querySelector<HTMLElement>(
+				"[data-dynamic-location-text]",
+			);
+			if (locationTextElement) {
+				locationTextElement.textContent = entry.location;
+			}
+		} else {
+			locationElement.remove();
 		}
 	}
 

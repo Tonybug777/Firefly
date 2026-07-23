@@ -24,12 +24,13 @@ export async function GET() {
 			const rendered = await processor.render(markdown);
 
 			return {
-				id: dynamicSlug(entry.id),
-				published: entry.data.published.getTime(),
-				html: rendered.code,
-				images,
-				searchText: dynamicSearchText(entry),
-				pinned: entry.data.pinned || false,
+					id: dynamicSlug(entry.id),
+					published: entry.data.published.getTime(),
+					html: rendered.code,
+					images,
+					searchText: dynamicSearchText(entry),
+					location: entry.data.location || "",
+					pinned: entry.data.pinned || false,
 			};
 		}),
 	);

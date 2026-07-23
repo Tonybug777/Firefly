@@ -220,6 +220,13 @@ dynamic-feed {
 	white-space: nowrap;
 }
 
+.dynamic-meta {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
 .dynamic-time {
 	width: fit-content;
 	color: var(--content-meta);
@@ -230,6 +237,15 @@ dynamic-feed {
 
 .dynamic-time:hover {
 	color: var(--primary);
+}
+
+.dynamic-location {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: var(--content-meta);
+	font-size: 0.78rem;
+	line-height: 1.5;
 }
 
 .dynamic-permalink {

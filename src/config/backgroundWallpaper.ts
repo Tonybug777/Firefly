@@ -4,7 +4,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	// 壁纸模式："banner" 横幅壁纸，"fullscreen" 全屏壁纸，"overlay" 全屏透明，"none" 纯色背景无壁纸
 	mode: "banner",
 	// 是否启用背景视频播放，配置后将在导航栏显示视频播放按钮
-	playerEnable: true,
+	playerEnable: false,
 	/**
 	 * 背景图片配置
 	 * 图片路径支持三种格式：
@@ -39,22 +39,37 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 桌面背景图片（支持单张或多张随机）
 		// desktop: "assets/images/DesktopWallpaper/d1.avif",
 		desktop: [
-			"assets/images/DesktopWallpaper/d1.avif",
-			"assets/images/DesktopWallpaper/d2.avif",
-			"assets/images/DesktopWallpaper/d3.avif",
-			"assets/images/DesktopWallpaper/d4.avif",
-			"assets/images/DesktopWallpaper/d5.avif",
-			"assets/images/DesktopWallpaper/d6.avif",
+			"assets/images/DesktopWallpaper/desk1.avif",
+			"assets/images/DesktopWallpaper/desk2.avif",
+			"assets/images/DesktopWallpaper/desk3.avif",
+			"assets/images/DesktopWallpaper/desk4.avif",
+			"assets/images/DesktopWallpaper/desk5.avif",
+			"assets/images/DesktopWallpaper/desk6.avif",
+			"assets/images/DesktopWallpaper/desk7.avif",
+			"assets/images/DesktopWallpaper/desk8.avif",
+			"assets/images/DesktopWallpaper/desk9.avif",
+			"assets/images/DesktopWallpaper/desk10.avif",
+			"assets/images/DesktopWallpaper/desk11.avif",
+			"assets/images/DesktopWallpaper/desk12.avif",
+			"assets/images/DesktopWallpaper/desk13.avif",
+			"assets/images/DesktopWallpaper/desk14.avif",
+			"assets/images/DesktopWallpaper/desk15.avif",
+			"assets/images/DesktopWallpaper/desk16.avif",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
 		mobile: [
-			"assets/images/MobileWallpaper/m1.avif",
-			"assets/images/MobileWallpaper/m2.avif",
-			"assets/images/MobileWallpaper/m3.avif",
-			"assets/images/MobileWallpaper/m4.avif",
-			"assets/images/MobileWallpaper/m5.avif",
-			"assets/images/MobileWallpaper/m6.avif",
+			"assets/images/MobileWallpaper/mobile1.avif",
+			"assets/images/MobileWallpaper/mobile2.avif",
+			"assets/images/MobileWallpaper/mobile3.avif",
+			"assets/images/MobileWallpaper/mobile4.avif",
+			"assets/images/MobileWallpaper/mobile5.avif",
+			"assets/images/MobileWallpaper/mobile6.avif",
+			"assets/images/MobileWallpaper/mobile7.avif",
+			"assets/images/MobileWallpaper/mobile8.avif",
+			"assets/images/MobileWallpaper/mobile9.avif",
+			"assets/images/MobileWallpaper/mobile10.avif",
+			"assets/images/MobileWallpaper/mobile11.avif",
 		],
 		// 背景视频播放地址
 		// 支持单个视频路径（字符串）或多个视频循环（数组）
@@ -75,17 +90,19 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "你说，我在",
 			// 主页横幅主标题字体大小
 			titleSize: "3.8rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"日高悬风拂面留下丝丝温暖",
+				"别辜负眼前季节",
+				"花踌躇柳轻叹敢问情何以堪",
+				"徒伤悲青春年月",
+				"春知晓梦不觉恰似你我那年",
+				"不经事却说离别",
+				"燕归来莺语乱谁在歌咏春天",
+				"眼清澈笑容无邪",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
@@ -115,9 +132,9 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		waves: {
 			enable: {
 				// 桌面端是否启用水波纹动画效果
-				desktop: true,
+				desktop: false,
 				// 移动端是否启用水波纹动画效果
-				mobile: true,
+				mobile: false,
 			},
 		},
 		// 渐变过渡效果配置，当水波纹关闭时自动启用，提供壁纸底部到背景色的平滑过渡
@@ -134,7 +151,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 壁纸轮播配置，横幅壁纸和全屏壁纸共享，仅在配置多张图片时生效
 		carousel: {
 			// 是否启用壁纸轮播；关闭时保持每次刷新随机显示一张
-			enable: false,
+			enable: true,
 			// 轮播切换间隔（毫秒）
 			interval: 5000,
 			// 过渡效果: 'fade' 渐变 | 'zoom' 缩放 | 'slide' 滑动 | 'kenburns' 旋转木马
