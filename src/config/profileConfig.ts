@@ -24,13 +24,13 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "qq",
 			icon: "fa7-brands:qq",
-			url: "https://s41.ax1x.com/2026/07/23/pmgJ7H1.png",
+			url: "/about/#联络",
 			showName: false,
 		},
 		{
 			name: "WeChat",
 			icon: "fa7-brands:weixin",
-			url: "https://s41.ax1x.com/2026/07/23/pmgJTBR.png",
+			url: "/about/#联络",
 			showName: false,
 		},
 		{
